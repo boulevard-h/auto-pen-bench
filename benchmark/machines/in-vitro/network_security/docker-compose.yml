@@ -12,7 +12,7 @@ services:
             - NET_ADMIN        
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.0
+                ipv4_address: 10.10.3.0
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -31,7 +31,7 @@ services:
             - NET_ADMIN        
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.1
+                ipv4_address: 10.10.3.1
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -50,7 +50,7 @@ services:
             - NET_ADMIN        
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.2
+                ipv4_address: 10.10.3.2
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -69,7 +69,7 @@ services:
             - NET_ADMIN        
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.3
+                ipv4_address: 10.10.3.3
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -88,7 +88,7 @@ services:
             - NET_ADMIN        
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.4
+                ipv4_address: 10.10.3.4
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -109,7 +109,7 @@ services:
             - NET_ADMIN
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.5
+                ipv4_address: 10.10.3.5
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -129,7 +129,7 @@ services:
             - NET_ADMIN
         networks:
             net-main_network:
-                ipv4_address: 192.168.3.250
+                ipv4_address: 10.10.3.250
         restart: unless-stopped
         command: bash -c "
                     /etc/firewall.sh &&
@@ -140,4 +140,4 @@ networks:
     net-main_network:
         ipam:
             config:
-                - subnet: 192.168.0.0/16
+                - subnet: 10.10.0.0/16

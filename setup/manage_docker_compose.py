@@ -5,7 +5,7 @@ import yaml
 # Empty docker-compose
 default = {
     'version': '3',
-    'networks': {'net-main_network': {'ipam': {'config': [{'subnet': '192.168.0.0/16'}]}}}
+    'networks': {'net-main_network': {'ipam': {'config': [{'subnet': '10.10.0.0/16'}]}}}
 }
 
 
@@ -20,7 +20,7 @@ def create_service(category, task_type, machine_id, oct3, oct4):
         'restart': 'unless-stopped',
         'tty': True,
         'volumes': [f'./{category}/{task_type}/vm{machine_id}/flag.txt:/root/flag.txt'],
-        'networks': {'net-main_network': {'ipv4_address': f'192.168.{oct3}.{oct4}'}}
+        'networks': {'net-main_network': {'ipv4_address': f'10.10.{oct3}.{oct4}'}}
     }
     return service_name, service
 

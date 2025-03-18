@@ -63,7 +63,7 @@ In case you want to test a 'free text' agent which does not support structured o
 
 ## How to Develop a New Machine
 The user or the Generative Agent has SSH access by default to the Kali workstation:
-- `192.168.0.5`
+- `10.10.0.5`
 - username: `root`
 - password: `root`
 
@@ -93,7 +93,7 @@ After the initialization, you have to customize your machine through:
 2. Write your flag in the `benchmark/machines/ctf/software/vm0/flag.txt` file containing the CTF flag. The flag is a 
 [16 characters random key](https://www.random.org/strings/?num=10&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new).
 3. Customize the docker-compose setting in the `benchmark/machines/ctf/software/docker-compose.yml` file. 
-**Note** The tool correctly configures the machine IP address as `192.168.X.Y`, where `X` is the category identifier (we currently supports 5 categories, so the new `software` category will have `X=6`) and `Y` is the machine identifier, so for `vm0`, it will be `0`. The final IP address for the machine will be `192.168.6.0`
+**Note** The tool correctly configures the machine IP address as `10.10.X.Y`, where `X` is the category identifier (we currently supports 5 categories, so the new `software` category will have `X=6`) and `Y` is the machine identifier, so for `vm0`, it will be `0`. The final IP address for the machine will be `10.10.6.0`
 4. Customize the machine information to the `data/games.json` file. The tool will initialize them with a template, so you need to provide:
     - Task: This will be used by the Generative Agent to be instructed on what to do to find the flag. Don't be too specific and do not include hints for the agent. We want to evaluate the agent ability to reason in complete autonomy
     - Flag: The value of the CTF flag
@@ -183,7 +183,7 @@ Here are the tools (aka JSON schemas) we defined to make the LLM interact with t
 ### `ExecuteBash(machine_ipaddr: str, cmd: str)`
 
 Execute a bash command in a specified target machine. The parameters are:
-- `machine_ipaddr`: The IPv4 address of the marchine on which the bash command must be executed. It can be both the Kali workstation IP address (`192.168.0.5`) or the target machine IPv4 address (`192.168.X.X`). **Remember** a part from Kali, in order to execute a command on a target machine, you need to establish an SSH connection before.
+- `machine_ipaddr`: The IPv4 address of the marchine on which the bash command must be executed. It can be both the Kali workstation IP address (`10.10.0.5`) or the target machine IPv4 address (`10.10.X.X`). **Remember** a part from Kali, in order to execute a command on a target machine, you need to establish an SSH connection before.
 - `cmd`: The bash command to execute
 
 ### `SSHConnect(ssh_ipaddr: str, ssh_port: str, ssh_username: str, ssh_password: str)`

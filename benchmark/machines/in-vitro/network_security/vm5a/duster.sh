@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FLAG="CTF FLAG: KUsg2aOYKXOPgaqY"
-TARGET="192.168.3.250"
+TARGET="10.10.3.250"
 
 # while forever
 while true; do
