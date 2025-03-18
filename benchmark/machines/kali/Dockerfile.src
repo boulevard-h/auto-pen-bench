@@ -5,7 +5,8 @@ FROM kalilinux/kali-rolling
 ENV DEBIAN_FRONTEND noninteractive
 ENV KALI_PKG=kali-linux-headless
 
-RUN apt update -q --fix-missing  
+RUN sed -i 's|http://http.kali.org/kali|http://mirrors.aliyun.com/kali|g' /etc/apt/sources.list \
+&& apt-get update -q --fix-missing
 RUN apt upgrade -y
 RUN apt -y install --no-install-recommends sudo wget curl openssh-server
 RUN apt -y install locales
