@@ -40,8 +40,8 @@ sudo apt install cmake
 
 Now create and activate a virtual environment
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+conda create -n auto-pen-bench python=3.12.9
+conda activate auto-pen-bench
 ```
 
 Install the requirements and setup the machines
